@@ -8,7 +8,7 @@
   <form action="https://formspree.io/reqreq@protonmail.com" method="POST">
   Input Field 1:
   <br/>
-  <input type="text" name="test1" value="Test1">
+  <input type="text" name="test1" value="T  est1">
   <br/>
   Input Field 2:
   <br/>
@@ -16,8 +16,26 @@
   <br/>
   <input type="submit" value="Submit">
 </form> 
+ 
+<form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLScckuvVjZHxgpQY49ZsyBHZVHK8tsAFBWJLxRWDVFS9qa5vYQ/formResponse?" target="hidden_iframe" onsubmit="submitted=true;">
+  First name:<br>
+  <input type="text" name="entry.676649783" id="entry.676649783"><br>
+  Last name:<br>
+  <input type="text" name="entry.2136009676=" id="entry.2136009676">
+  <input type="submit" value="Submit">
+</form>
+
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
+
   
-  
+  <script src="assets/js/jquery.min.js"></script>
+<script type="text/javascript">var submitted=false;</script>
+<script type="text/javascript">
+$('#gform').on('submit', function(e) {
+  $('#gform *').fadeOut(2000);
+  $('#gform').prepend('Your submission has been processed...');
+  });
+</script>
   
 </body>
 </html>
